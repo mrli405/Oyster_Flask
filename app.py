@@ -18,9 +18,9 @@ def cmd1():
     global process
     if process is None or process.poll() is not None:
         process = subprocess.Popen(
-           shlex.split("python aipart/labelme2coco.py aipart/datasets_20220822 aipart/datasets_20220822_coco/c3 --labels aipart/labels.txt"))
+           shlex.split("python aipart/labelme2coco.py aipart/datasets_20220822 aipart/datasets_20220822_coco/result --labels aipart/labels.txt"))
         return redirect('success')
-    return 'Waiting!'
+    return 'Error!'
 
 @app.route('/success')
 def success():
